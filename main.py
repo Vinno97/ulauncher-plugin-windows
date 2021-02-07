@@ -77,8 +77,8 @@ def get_open_windows():
     results = []
     for window in non_stickies:
         results.append(ExtensionResultItem(icon='images/icon.png',
-                                           name=get_process_name(window['pid']),
-                                           description=window['title'],
+                                           name=window['title'],
+                                           description=get_process_name(window['pid']),
                                            on_enter=RunScriptAction(ACTIVATE_COMMAND.format(window['id']), None)
                        ))
     return results
